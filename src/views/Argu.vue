@@ -1,5 +1,15 @@
 <template>
   <div class="argu">
-    {{ $route.params.name }}
+    {{ name }}
   </div>
 </template>
+<script>
+export default {
+  props: {
+    name: {
+      type: String,
+      default: 'xkux8023'
+    }
+  }
+}
+</script>

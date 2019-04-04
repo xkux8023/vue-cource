@@ -5,17 +5,37 @@ export default [
     path: '/',
     alias: 'home_page',
     name: 'home',
-    component: Home
+    component: Home,
+    props: route => ({
+      food: route.query.food
+    }),
+    beforeEnter: (to, from, next) => {
+      // if (from.name === 'about') alert('这是从 about 来的！')
+      // else alert('这不是从 about 来的')
+      next()
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login.vue')
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('@/views/About.vue')
+    component: () => import('@/views/About.vue'),
+    props: {
+      food: 'apple apple'
+    },
+    meta: {
+      title: '关于'
+    }
   },
   {
     path: '/argu/:name',
     name: 'argu',
-    component: () => import('@/views/Argu.vue')
+    component: () => import('@/views/Argu.vue'),
+    props: true
   },
   {
     path: '/parent',
@@ -39,5 +59,9 @@ export default [
   {
     path: '/main',
     redirect: to => '/'
+  },
+  {
+    path: '*',
+    component: () => import('@/views/error_404.vue')
   }
 ]
