@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link :to="{ name: 'about' }">About</router-link>
-    </div>
+    <ul id="nav">
+      <li><router-link to="/">Home</router-link><li/>
+      <li><router-link :to="{ name: 'about' }">About</router-link><li/>
+      <li><router-link to="/parent">Parent</router-link><li/>
+      <li><router-link to="/store">Store</router-link><li/>
+      <li><router-link to="/named_view">named_view</router-link><li/>
+      <li><router-link to="/login">Login</router-link><li/>
+    </ul>
     <transition-group :name="routerTransition">
       <router-view key="default" />
       <router-view key="email" name="email" />
@@ -55,11 +59,16 @@ export default {
 }
 #nav {
   padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  display: flex;
+  list-style: none;
+  li {
+    flex: 1;
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
 }
