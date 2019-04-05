@@ -6,12 +6,17 @@
     <button @click="handleClick('push')">跳转到argu</button>
     <button @click="handleClick('replace')">替换到parent</button>
     <h4> {{ food }} </h4>
+    <button @click="getInfo" :style="{ background: bgColor }">请求数据</button>
+    <br />
+    <br />
+    <img :src="url">
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import { getUserInfo } from '@/api/user'
 
 export default {
   name: 'home',
@@ -22,6 +27,12 @@ export default {
     food: {
       type: String,
       default: 'egg'
+    }
+  },
+  data () {
+    return {
+      url: '',
+      bgColor: ''
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -46,6 +57,13 @@ export default {
         // }
         })
       } else if (type === 'replace') this.$router.replace({ name: 'parent'})
+    },
+    getInfo () {
+      getUserInfo({ userId: 21 }).then(res => {
+        console.log('res: ', res.data)
+        this.url = res.data.img
+        this.bgColor = res.data.color
+      })
     }
   }
 }
