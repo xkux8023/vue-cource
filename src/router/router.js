@@ -65,6 +65,10 @@ export default [
     component: () => import('@/views/store.vue')
   },
   {
+    path: '/split-pane',
+    component: () => import('@/views/split-pane.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/error_404.vue')
   }

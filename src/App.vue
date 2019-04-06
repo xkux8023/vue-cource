@@ -6,6 +6,7 @@
       <li><router-link to="/parent">Parent</router-link><li/>
       <li><router-link to="/store">Store</router-link><li/>
       <li><router-link to="/named_view">named_view</router-link><li/>
+      <li><router-link to="/split-pane">split-pane</router-link><li/>
       <li><router-link to="/login">Login</router-link><li/>
     </ul>
     <transition-group :name="routerTransition">
@@ -54,7 +55,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 #nav {
