@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <ul id="nav">
-      <li><router-link to="/">Home</router-link><li/>
-      <li><router-link :to="{ name: 'about' }">About</router-link><li/>
-      <li><router-link to="/parent">Parent</router-link><li/>
-      <li><router-link to="/store">Store</router-link><li/>
-      <li><router-link to="/named_view">named_view</router-link><li/>
-      <li><router-link to="/split-pane">split-pane</router-link><li/>
-      <li><router-link to="/login">Login</router-link><li/>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link :to="{ name: 'about' }">About</router-link></li>
+      <li><router-link to="/parent">Parent</router-link></li>
+      <li><router-link to="/store">Store</router-link></li>
+      <li><router-link to="/named_view">named_view</router-link></li>
+      <li><router-link to="/split-pane">split-pane</router-link></li>
+      <li><router-link to="/count-to">count-to</router-link></li>
+      <li><router-link to="/login">Login</router-link></li>
     </ul>
     <transition-group :name="routerTransition">
       <router-view key="default" />
