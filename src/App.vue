@@ -8,6 +8,7 @@
       <li><router-link to="/named_view">named_view</router-link></li>
       <li><router-link to="/split-pane">split-pane</router-link></li>
       <li><router-link to="/count-to">count-to</router-link></li>
+      <li><router-link to="/menu_page">menu-page</router-link></li>
       <li><router-link to="/login">Login</router-link></li>
     </ul>
     <transition-group :name="routerTransition">
