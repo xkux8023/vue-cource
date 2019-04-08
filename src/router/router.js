@@ -1,11 +1,18 @@
 import Home from '@/views/Home.vue'
+import Layout from '@/views/Layout.vue'
 
 export default [
   {
     path: '/',
     alias: 'home_page',
     name: 'home',
-    component: Home,
+    component: Layout,
+    children: [
+      {
+        path: 'home',
+        component: Home
+      }
+    ],
     props: route => ({
       food: route.query.food
     }),

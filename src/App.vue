@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ul id="nav">
+    <!-- <ul id="nav">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link :to="{ name: 'about' }">About</router-link></li>
       <li><router-link to="/parent">Parent</router-link></li>
@@ -10,12 +10,12 @@
       <li><router-link to="/count-to">count-to</router-link></li>
       <li><router-link to="/menu_page">menu-page</router-link></li>
       <li><router-link to="/login">Login</router-link></li>
-    </ul>
-    <transition-group :name="routerTransition">
+    </ul> -->
+    <!-- <transition-group :name="routerTransition"> -->
       <router-view key="default" />
       <router-view key="email" name="email" />
       <router-view key="tel" name="tel" />
-    </transition-group>
+    <!-- </transition-group> -->
   </div>
 </template>
 <script>
