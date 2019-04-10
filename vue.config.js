@@ -13,6 +13,6 @@ module.exports = {
   },
   productionSourceMap: false,
   devServer: {
-    // proxy: 'http://location:4000'
+    proxy: 'http://location:3000'
   }
 }

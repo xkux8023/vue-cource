@@ -86,6 +86,17 @@ export default [
     component: () => import('@/views/menu-page.vue')
   },
   {
+    path: '/',
+    name: 'table',
+    component: Layout,
+    children: [
+      {
+        path: 'table',
+        component: () => import('@/views/table.vue')
+      }
+    ]
+  },
+  {
     path: '*',
     component: () => import('@/views/error_404.vue')
   }
